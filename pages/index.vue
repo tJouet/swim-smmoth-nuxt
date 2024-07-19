@@ -1,5 +1,7 @@
 <template>
-  <div class="h-screen bg-red-500"></div>
+  <Hero />
+  <Programs />
+  <AboutUs />
 </template>
 
 <script></script>
