@@ -4,12 +4,12 @@
   >
     <StickyTitle isReflected:false title="Our programs" />
     <Title isReflected:false title="Our programs" class="md:hidden" />
-    <div class="flex flex-col w-full">
-      <h2 class="text-2xl py-10 font-medium md:hidden">
+    <div class="flex flex-col w-full justify-center items-center">
+      <h2 class="text-xl py-10 font-medium md:hidden">
         From learning to swim to perfecting your stroke
       </h2>
       <ProgramDisplay
-        v-for="program in FakeData"
+        v-for="program in FakeData.programs"
         :title="program.label"
         :description="program.description"
         :image="program.url"

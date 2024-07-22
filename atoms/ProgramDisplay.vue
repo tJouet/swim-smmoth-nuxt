@@ -2,29 +2,30 @@
   <div
     @mouseover="startAnimation"
     @mouseout="resetAnimation"
-    class="p-5 flex flex-col justify-center items-center md:flex-row-reverse md:justify-between md:border-b-2 md:border-white"
+    class="p-5 flex flex-col justify-center items-center md:flex-row-reverse md:justify-between md:border-b-2 md:border-white w-full"
   >
     <img
       :src="image"
       :class="{
-        'is-expanded': isExpanded,
-        'is-contract': !isExpanded,
+        'is-expanded': isExpanded && !isSmallScreen,
+        'is-contract': !isExpanded && !isSmallScreen,
       }"
       class="h-[210px] w-[315px] object-cover rounded-[30px] md:translate-x-[-20px] overflow-hidden border-2 border-clearBlue"
     />
     <h3
       :class="{
-        'title-is-expanded': isExpanded,
+        'title-is-expanded': isExpanded || isSmallScreen,
         'title-is-contract': !isExpanded,
       }"
-      class="text-2xl font-semibold mt-4 md:text-5xl md:pl-32 text-lightGrey"
+      class="text-2xl font-semibold mt-4 md:text-4xl md:pl-16 md:text-lightGrey text-lighBlue"
     >
       {{ title }}
     </h3>
     <p class="font-light my-4 md:hidden">
       {{ description }}
     </p>
-    <a :href="link" class="text-clearBlue md:hidden">Read more</a>
+    <!-- Add later -->
+    <!-- <a :href="link" class="text-clearBlue md:hidden">Read more</a> -->
   </div>
 </template>
 
@@ -39,13 +40,24 @@ defineProps({
 });
 
 var isExpanded = ref(false);
-const startAnimation = () => {
+var isSmallScreen = ref(false);
+
+const startAnimation = (): void => {
   isExpanded.value = true;
+  console.log(isSmallScreen.value);
 };
 
-const resetAnimation = () => {
+const resetAnimation = (): void => {
   isExpanded.value = false;
 };
+
+const checkScreenSize = (): void => {
+  if (window.innerWidth <= 768) {
+    isSmallScreen.value = true;
+  }
+};
+
+onMounted((): void => window.addEventListener("resize", checkScreenSize()));
 </script>
 
 <style scoped>

@@ -1,7 +1,14 @@
-[
-            {"id":1,"label":"Squad Training","description":"Our group sessions are fun, motivating and designed to boost your fitness and freestyle to prepare you for any open water race or triathlon event."},
-            {"id":2,"label":"1 to 1 Coach","description":"It's never too late, no matter your starting point. Our 1 to 1 coaching methodology will help you to take your swimming to the next level."},
-            {"id":3,"label":"Video Analysis","description":"A powerful tool to understand what is holding you back or why your performance have plateaued. A video can make all the difference."},
-            {"id":4,"label":"Stroke Development","description":"A semi private class (max 4 pers.) that provides unlimited feedback, stroke correction, and customized drills to refine your stroke."}
+    { "programs":[
+            {"id":1,"label":"Squad Training","description":"Our group sessions are fun, motivating and designed to boost your fitness and freestyle to prepare you for any open water race or triathlon event.","url":"/img/squadTraining.jpg"},
+            {"id":2,"label":"1 to 1 Coach","description":"It's never too late, no matter your starting point. Our 1 to 1 coaching methodology will help you to take your swimming to the next level.","url":"/img/coachTraining.jpg"},
+            {"id":3,"label":"Video Analysis","description":"A powerful tool to understand what is holding you back or why your performance have plateaued. A video can make all the difference.","url":"/img/videoTraining.jpg"},
+            {"id":4,"label":"Stroke Development","description":"A semi private class (max 4 pers.) that provides unlimited feedback, stroke correction, and customized drills to refine your stroke.","url":"/img/strokeTraining.jpg"}
+        ],
+      "staff":[
+        {"id":1, "name": "Ha Kwamhan", "jobTitle":"Professional racer", "jobDescription": "He races, duh. But he was also born in water. He hasn't left his bathtub since. His fingers are so prunny he can grip a pearl in a bucket of oil. Cool stuff uh?" },
+        {"id":2, "name": "Lilian Gallager", "jobTitle":"Expert fisherwoman", "jobDescription":"Heavily decorated for her service in the coast guard, Lilian has caught every fish imaginable. It was only natural she became our beloved lifeguard. Armed with her trusty road, she'll pull you out before you drown."},
+        {"id":3, "name": "Jane Hitor", "jobTitle":"Janitor", "jobDescription":"She cleans. Don't let your dirty laundry in the locker rooms, she's the one that has to deal with it."},
+        {"id":4, "name": "Albin Michel", "jobTitle":"Trainer","jobDescription":"Deathly afraid of water, his goal is to make you get out the blue by the most efficient means possible and in the fastest way possible. Who better to train you to race really?"}
+      ]
+    }
   
-]
