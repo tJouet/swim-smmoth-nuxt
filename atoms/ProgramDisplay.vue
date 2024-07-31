@@ -44,7 +44,6 @@ var isSmallScreen = ref(false);
 
 const startAnimation = (): void => {
   isExpanded.value = true;
-  console.log(isSmallScreen.value);
 };
 
 const resetAnimation = (): void => {
