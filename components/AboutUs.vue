@@ -60,7 +60,7 @@ import {
   Pagination,
   Navigation,
 } from "vue3-carousel/dist/carousel.es.js";
-import { Title, StickyTitle, StaffPresentation, Testimonies } from "@/atoms";
+import { Title, StickyTitle, StaffPresentation } from "@/atoms";
 import FakeData from "@/data.json";
 </script>
 
