@@ -3,11 +3,11 @@
     class="h-auto bg-cover bg-center"
     style="background-image: url('/img/bgImage.jpg')"
   >
-    <div class="p-10 h-full flex flex-col">
+    <div class="p-10 h-full flex flex-col text-white">
       <!-- Start title div -->
-      <div class="flex flex-row justify-center md:justify-start">
+      <div class="flex flex-row justify-center md:justify-start items-start">
         <StickyTitle :isReflected="true" title="About Us" />
-        <Title :title="'Our staff'" :isReflected="true" class="pb-8 md:pl-6" />
+        <Title :title="'Our staff'" :isReflected="true" class="mb-6 md:pl-6" />
       </div>
       <!-- End title div -->
       <!-- Start phone div -->
@@ -48,6 +48,23 @@
         </carousel>
       </div>
       <!-- End comp div -->
+      <!-- Start Testimony-->
+      <carousel
+        :items-to-show="1"
+        :wrapAround="true"
+        :autoplay="5000"
+        class="block"
+      >
+        <slide v-for="testimony in FakeData.testimonies" :key="testimony.id">
+          <Testimonies
+            class="md:mt-26"
+            :content="testimony.content"
+            :occupation="testimony.occupation"
+            :name="testimony.name"
+          />
+        </slide>
+      </carousel>
+      <!-- End testimonies -->
     </div>
   </div>
 </template>
@@ -62,6 +79,7 @@ import {
 } from "vue3-carousel/dist/carousel.es.js";
 import { Title, StickyTitle, StaffPresentation } from "@/atoms";
 import FakeData from "@/data.json";
+import Testimonies from "~/atoms/Testimonies.vue";
 </script>
 
 <!-- https://www.sebastianlundberg.dk/personlig-traening -->

@@ -2,7 +2,7 @@
   <div
     @mouseover="startAnimation"
     @mouseout="resetAnimation"
-    class="p-5 flex flex-col justify-center items-center md:flex-row-reverse md:justify-between md:border-b-2 md:border-white w-full"
+    class="p-5 flex flex-col justify-center items-center md:flex-row-reverse md:justify-between md:border-b-2 md:border-white text-white w-full"
   >
     <img
       :src="image"
@@ -12,9 +12,18 @@
       }"
       class="h-[210px] w-[315px] object-cover rounded-[30px] md:translate-x-[-20px] overflow-hidden border-2 border-clearBlue"
     />
+    <p
+      class="font-light my-4 hidden md:block w-[50%]"
+      :class="{
+        'text-is-expanded': isExpanded || isSmallScreen,
+        'text-is-contract': !isExpanded,
+      }"
+    >
+      {{ description }}
+    </p>
     <h3
       :class="{
-        'title-is-expanded': isExpanded || isSmallScreen,
+        'title-is-expanded': isExpanded,
         'title-is-contract': !isExpanded,
       }"
       class="text-2xl font-semibold mt-4 md:text-4xl md:pl-16 md:text-lightGrey text-lighBlue"
@@ -66,12 +75,30 @@ onMounted((): void => window.addEventListener("resize", checkScreenSize()));
   opacity: 1;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+
 .is-contract {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.text-is-expanded {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.text-is-contract {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 .title-is-expanded {
   color: aqua;
+  transform: translateX(-20px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.title-is-contract {
+  transform: translateX(0px);
+  transition: transform 0.5s ease-in-out;
 }
 </style>

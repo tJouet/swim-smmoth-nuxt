@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex md:py-[40px] py-[10px] justify-between items-center md:px-8 px-3 absolute w-full text-sm md:text-2xl text-white font-semibold"
+    class="flex md:py-[40px] py-[10px] justify-between items-center md:px-8 px-3 absolute w-full text-sm md:text-2xl text-white font-semibold strokedtextsm"
   >
     <img
       class="md:h-20 h-9 md:w-20 w-9"
@@ -36,10 +36,18 @@
 </template>
 
 <script setup lang="ts">
+import { defineEmits } from "vue";
+
+const emit = defineEmits(["newPlacement"]);
 const sendPlacement = (placement: string) => {
-  console.log(placement);
+  emit("newPlacement", placement);
 };
 const contactUs = () => {
   console.log("Contactez nous!");
 };
 </script>
+<style>
+.strokedtextsm {
+  -webkit-text-stroke: 0.5px #111726;
+}
+</style>

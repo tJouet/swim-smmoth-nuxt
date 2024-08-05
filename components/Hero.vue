@@ -5,7 +5,7 @@
   >
     <div class="w-full flex flex-col justify-start items-center">
       <h1
-        class="md:text-[64px] font-bold md:leading-[64px] leading-[36px] text-center text-[32px]"
+        class="md:text-[64px] font-bold md:leading-[64px] leading-[36px] text-center text-[32px] strokedtext"
       >
         UNLOCK YOUR <br />FULL <span class="text-clearBlue">SWIMMING</span
         ><br />
@@ -14,3 +14,8 @@
     </div>
   </div>
 </template>
+<style>
+.strokedtext {
+  -webkit-text-stroke: 1px #111726;
+}
+</style>
