@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:h-auto md:flex-row md:p-10 py-10 bg-darkBlue flex flex-col text-center items-center justify-between text-white"
+    class="md:h-auto md:flex-row md:p-10 md:py-10 bg-darkBlue flex flex-col text-center items-center justify-between text-white"
   >
     <StickyTitle isReflected:false title="Our programs" />
     <Title isReflected:false title="Our programs" class="md:hidden" />
